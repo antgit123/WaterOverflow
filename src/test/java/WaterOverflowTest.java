@@ -69,4 +69,24 @@ public class WaterOverflowTest {
     void verifyValidColumnInputCase1() {
         assertEquals(true, test.checkNumberInput("2"));
     }
+
+    @Test
+    void verifyGlassCapacityNegativeCase1() {
+        assertEquals(0.0, test.findGlassCapacity(1.5,2,2));
+    }
+
+    @Test
+    void verifyGlassCapacityNegativeCase2() {
+        assertEquals(0.0, test.findGlassCapacity(1.5,2,2));
+    }
+
+    @Test
+    void verifyGlassCapacityPositiveCase1() {
+        assertEquals(0.25, test.findGlassCapacity(1,1,1));
+    }
+
+    @Test
+    void verifyGlassCapacityPositiveCase2() {
+        assertEquals(0.25, test.findGlassCapacity(1.5,2,2));
+    }
 }
