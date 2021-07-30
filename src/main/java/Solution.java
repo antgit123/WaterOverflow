@@ -60,7 +60,7 @@ public class Solution {
         if(columnNumber > rowNumber){
             System.out.println("Incorrect input - the value of jth column" +
                     " can't be greater than the value of ith row");
-            return 0.0;
+            return -1;
         }
         return 0.0;
     }
