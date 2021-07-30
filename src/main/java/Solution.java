@@ -32,7 +32,7 @@ public class Solution {
                 columnNumber);
         System.out.println("The total water capacity in row:" + rowNumber +
         " and column:" + columnNumber + " is - "+ glassCapacity + " " +
-                "litres");
+                "litres or " + glassCapacity*1000 + " millilitres");
     }
 
     //helper function to verify the water capacity input
