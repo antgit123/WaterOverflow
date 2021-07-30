@@ -96,6 +96,11 @@ public class WaterOverflowTest {
     }
 
     @Test
+    void verifyPartialGlassCapacityPositiveCase2() {
+        assertEquals(0.125, test.findGlassCapacity(0.5,2,2));
+    }
+
+    @Test
     void verifyEmptyGlassCapacityCase1() {
         assertEquals(0.0, test.findGlassCapacity(0.0,1,1));
     }

@@ -69,7 +69,7 @@ public class Solution {
             if(waterCapacity == 0){
                 return 0.0;
             }
-            int rowLevel = (int)Math.ceil(waterCapacity);
+            int rowLevel = (int)Math.ceil(waterCapacity * 4);
             GlassObject[][] glasses =
                     new GlassObject[rowLevel][rowLevel];
             boolean capacityLeft = true;
