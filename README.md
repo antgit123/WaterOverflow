@@ -11,7 +11,7 @@ Prerequisite: Maven installed
 
 # Assumptions
 1. The amount of water added as input is in litres and glass capacity value will be returned in litres. If required to convert to ml, multiply the result by 1000 (Although this would still be displayed in the program output).
-2. The row number and column number follow human readable inputs. For example: row 0 and column 0 does not exist in human world as it shoud start with 1.
+2. The row number and column number follow human readable inputs. For example: row 0 and column 0 does not exist in human world as it shoud start with 1. Please enter any value above 0.
 3. There is some additional code written to demonstrate an OOP concept to show the extensibility of the system and not used for logic purpose.
 
 # Steps to run the program: 
