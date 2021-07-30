@@ -72,12 +72,12 @@ public class WaterOverflowTest {
 
     @Test
     void verifyGlassCapacityNegativeCase1() {
-        assertEquals(0.0, test.findGlassCapacity(1.5,2,2));
+        assertNotEquals(0.0, test.findGlassCapacity(1.5,2,2));
     }
 
     @Test
     void verifyGlassCapacityNegativeCase2() {
-        assertEquals(0.0, test.findGlassCapacity(1.5,2,2));
+        assertNotEquals(0.0, test.findGlassCapacity(1.5,2,2));
     }
 
     @Test
@@ -88,5 +88,15 @@ public class WaterOverflowTest {
     @Test
     void verifyGlassCapacityPositiveCase2() {
         assertEquals(0.25, test.findGlassCapacity(1.5,2,2));
+    }
+
+    @Test
+    void verifyPartialGlassCapacityPositiveCase1() {
+        assertEquals(0.15, test.findGlassCapacity(0.15,1,1));
+    }
+
+    @Test
+    void verifyEmptyGlassCapacityCase1() {
+        assertEquals(0.0, test.findGlassCapacity(0.0,1,1));
     }
 }

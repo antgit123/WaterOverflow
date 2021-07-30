@@ -30,6 +30,9 @@ public class Solution {
         int columnNumber = Integer.parseInt(columnNumberInput);
         double glassCapacity = findGlassCapacity(waterCapacity,rowNumber,
                 columnNumber);
+        System.out.println("The total water capacity in row:" + rowNumber +
+        " and column:" + columnNumber + " is - "+ glassCapacity + " " +
+                "litres");
     }
 
     //helper function to verify the water capacity input
@@ -61,7 +64,37 @@ public class Solution {
             System.out.println("Incorrect input - the value of jth column" +
                     " can't be greater than the value of ith row");
             return -1;
+        }else{
+            //assuming no water added to glass
+            if(waterCapacity == 0){
+                return 0.0;
+            }
+            int rowLevel = (int)Math.ceil(waterCapacity);
+            GlassObject[][] glasses =
+                    new GlassObject[rowLevel][rowLevel];
+            boolean capacityLeft = true;
+            double glassCapacity = 0.25;
+            //fill first glass with all the water poured into it
+            for(int i=0;i< rowLevel;i++){
+                for(int j=0;j< rowLevel;j++){
+                    glasses[i][j] = new GlassObject();
+                }
+            }
+            glasses[0][0].setCapacity(waterCapacity);
+            //loop through glass levels and set capacity if water is left
+            for (int i = 0;capacityLeft;i++){
+                capacityLeft = false;
+                for (int j=0;j<= i;j++){
+                    if(glasses[i][j].getCapacity() > glassCapacity){
+                        double excess = glasses[i][j].getCapacity() - glassCapacity;
+                        glasses[i][j].setCapacity(glassCapacity);
+                        glasses[i+1][j].setCapacity(glasses[i+1][j].getCapacity() + excess/2);
+                        glasses[i+1][j+1].setCapacity(glasses[i+1][j+1].getCapacity() + excess/2);
+                        capacityLeft = true;
+                    }
+                }
+            }
+            return glasses[rowNumber -1][columnNumber -1].getCapacity();
         }
-        return 0.0;
     }
 }
